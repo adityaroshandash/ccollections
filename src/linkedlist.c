@@ -18,7 +18,6 @@ typedef struct LinkedListInternal {
     ListNode *tail;             // Reference pointer to the final boundary node
     size_t size;                // Tracks element count to avoid O(N) traversal on size checks
 } LinkedListInternal;
-
 // Size tracker lookup override
 static size_t linkedlist_size(const Collection *self) {
     LinkedListInternal *internal = (LinkedListInternal*)self->collection_context;
@@ -69,7 +68,6 @@ static bool linkedlist_add(Collection *self, void *element) {
     internal->size++;
     return true;
 }
-
 /**
  * @brief Instantiates a generic List backed by a node-linked doubly structure.
  */
